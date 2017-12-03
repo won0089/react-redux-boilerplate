@@ -4,11 +4,10 @@
   "description": "React+Redux boilerplate",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.dev.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open"
-  },
+    "build": "webpack --config webpack.prod.js",
+    "start:dev": "webpack-dev-server --open --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/won0089/react-redux-boilerplate.git"
