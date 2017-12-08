@@ -1,10 +1,11 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.jsx'
+    app: './src/app/index.jsx'
   },
   module: {
     rules: [
@@ -20,29 +21,32 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
+        use: ExtractTextPlugin.extract(
           {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[local]_[hash:base64:5]'
-            }
+            fallback: 'style-loader',
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  localIdentName: '[local]_[hash:base64:5]'
+                }
+              }
+            ]
           }
-        ]
+        )
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/app/index.html',
       files: {
         js: ['bundle.js']
       }
-    })
+    }),
+    new ExtractTextPlugin('style.css')
   ],
   output: {
     filename: 'bundle.js',
