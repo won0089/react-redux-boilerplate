@@ -1,5 +1,4 @@
 const express = require('express');
-const open = require('open');
 const path = require('path');
 
 const port = 3000;
@@ -14,7 +13,5 @@ app.get('*', function(req, res) {
 app.listen(port, function(err) {
   if (err) {
     console.log(err);
-  } else {
-    open(`http://localhost:${port}`);
   }
 });
