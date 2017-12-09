@@ -1,10 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import configureStore from './store/store';
+import App from './components/app/app';
 
 const store = configureStore();
 
 render(
-    <div>Hello World</div>,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('app')
 );

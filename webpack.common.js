@@ -7,10 +7,13 @@ module.exports = {
   entry: {
     app: './src/app/index.jsx'
   },
+  resolve: {
+    extensions: ['.jsx', '.js']
+  },
   module: {
     rules: [
       {
-        test: /\.js?/,
+        test: /\.jsx?$/,
         use: {
           loader: 'babel-loader',
           options: {
