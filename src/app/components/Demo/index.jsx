@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as styles from './style.css';
+import styles from './style.css';
 
 class Demo extends React.Component {
     render() {
