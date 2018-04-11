@@ -2,13 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/store';
-import App from './components/app/app';
+import Demo from './components/Demo';
 
 const store = configureStore();
 
 render(
     <Provider store={store}>
-        <App />
+        <Demo />
     </Provider>,
     document.getElementById('app')
 );

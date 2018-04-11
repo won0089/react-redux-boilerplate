@@ -3,14 +3,14 @@ import rootReducer from '../reducers/rootReducer';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
-const defaultState = {};
+const initialState = {};
 
-export default function configureStore(initialState = defaultState) {
+export default function configureStore(state = initialState) {
     return createStore(
         rootReducer,
-        initialState,
+        state,
         composeWithDevTools(applyMiddleware(thunk))
     );
 };
 
-export { defaultState };
+export { initialState };

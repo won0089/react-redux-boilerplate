@@ -1,7 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -22,23 +21,6 @@ module.exports = {
           }
         },
         exclude: ['node_modules']
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  modules: true,
-                  localIdentName: '[local]_[hash:base64:5]'
-                }
-              }
-            ]
-          }
-        )
       }
     ]
   },
@@ -49,8 +31,7 @@ module.exports = {
       files: {
         js: ['bundle.js']
       }
-    }),
-    new ExtractTextPlugin('style.css')
+    })
   ],
   output: {
     filename: 'bundle.js',
