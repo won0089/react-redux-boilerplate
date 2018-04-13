@@ -11,6 +11,6 @@ export default function configureStore(state = initialState) {
         state,
         composeWithDevTools(applyMiddleware(thunk))
     );
-};
+}
 
 export { initialState };
