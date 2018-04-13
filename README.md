@@ -26,12 +26,16 @@ npm start
 ### View library: React
 version ^16.0.0 [Docs](https://reactjs.org/docs)
 ### State management: Redux
-version ^3.7.0 [Docs](https://redux.js.org/api-reference)\n
-Uses redux-thunk for middleware.\n
+version ^3.7.0 [Docs](https://redux.js.org/api-reference)
+
+Uses redux-thunk for middleware.
+
 Uses redux-devtools-extension for state debugging. version ^2.13.0 [Docs](https://github.com/zalmoxisus/redux-devtools-extension)
 ### App bundler: Webpack
-version ^3.0.0 [Docs](https://webpack.js.org/api/)\n
-Uses css modules to bundle css.\n
+version ^3.0.0 [Docs](https://webpack.js.org/api/)
+
+Uses css modules to bundle css.
+
 Uses Babel to transpile down to ES5. version ^7.0.0 [Docs](https://babeljs.io/)
 ### Hot reloading
 Uses webpack-dev-server to handle hot reloading in development. version ^2.9.0 [Docs](https://github.com/webpack/webpack-dev-server)
@@ -44,5 +48,6 @@ version ^3.3.0 [Docs](http://airbnb.io/enzyme/docs/api/)
 
 # Linting
 ### Linter: Eslint
-version ^4.0.0. [Docs](https://eslint.org/)\n
+version ^4.0.0. [Docs](https://eslint.org/)
+
 Config file: .eslintrc
