@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styles from './style.css';
 
 class Demo extends React.Component {
@@ -10,4 +9,4 @@ class Demo extends React.Component {
     }
 }
 
-export default connect()(Demo);
+export default Demo;

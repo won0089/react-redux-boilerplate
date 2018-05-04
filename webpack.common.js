@@ -7,7 +7,18 @@ module.exports = {
         app: './src/client/index.jsx'
     },
     resolve: {
-        extensions: ['.jsx', '.js']
+        modules: [
+            path.resolve(path.resolve(__dirname, './src/client')),
+            './node_modules'
+        ],
+        extensions: ['.js', '.jsx', '.html'],
+        alias: {
+            components: path.resolve(__dirname, './src/client/components'),
+            containers: path.resolve(__dirname, './src/client/containers'),
+            reducers: path.resolve(__dirname, './src/client/reducers'),
+            stores: path.resolve(__dirname, './src/client/stores'),
+            actions: path.resolve(__dirname, './src/client/actions')
+        }
     },
     module: {
         rules: [
@@ -23,20 +34,6 @@ module.exports = {
                 exclude: ['node_modules']
             }
         ]
-    },
-    resolve: {
-        modules: [
-            path.resolve(path.resolve(__dirname, './src')),
-            './node_modules'
-        ],
-        extensions: ['.js', '.jsx', '.html'],
-        alias: {
-            components: path.resolve(__dirname, './src/client/components'),
-            containers: path.resolve(__dirname, './src/client/containers'),
-            reducers: path.resolve(__dirname, './src/client/reducers'),
-            stores: path.resolve(__dirname, './src/client/stores'),
-            actions: path.resolve(__dirname, './src/client/actions')
-        }
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
