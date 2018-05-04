@@ -1,6 +1,6 @@
 {
   "name": "react-redux-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React+Redux boilerplate",
   "main": "index.js",
   "scripts": {
@@ -66,7 +66,12 @@
       "enzyme-to-json/serializer"
     ],
     "moduleNameMapper": {
-      "\\.(css)$": "identity-obj-proxy"
+      "\\.(css)$": "identity-obj-proxy",
+      "^components(.*)": "<rootDir>/src/client/components$1",
+      "^containers(.*)": "<rootDir>/src/client/containers$1",
+      "^reducers(.*)": "<rootDir>/src/client/reducers$1",
+      "^stores(.*)": "<rootDir>/src/client/stores$1",
+      "^actions(.*)": "<rootDir>/src/client/actions$1"
     }
   }
 }

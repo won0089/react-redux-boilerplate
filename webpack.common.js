@@ -4,10 +4,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './src/app/index.jsx'
+        app: './src/client/index.jsx'
     },
     resolve: {
-        extensions: ['.jsx', '.js']
+        modules: [
+            path.resolve(path.resolve(__dirname, './src/client')),
+            './node_modules'
+        ],
+        extensions: ['.js', '.jsx', '.html'],
+        alias: {
+            components: path.resolve(__dirname, './src/client/components'),
+            containers: path.resolve(__dirname, './src/client/containers'),
+            reducers: path.resolve(__dirname, './src/client/reducers'),
+            stores: path.resolve(__dirname, './src/client/stores'),
+            actions: path.resolve(__dirname, './src/client/actions')
+        }
     },
     module: {
         rules: [
@@ -27,7 +38,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            template: './src/app/index.html',
+            template: './src/client/index.html',
             files: {
                 js: ['bundle.js']
             }
