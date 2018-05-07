@@ -4,7 +4,7 @@ import styles from './style.css';
 class Demo extends React.Component {
     render() {
         return (
-            <div className={styles.demo}> Admin Panel </div>
+            <div className={styles.demo}> React + Redux Boilerplate </div>
         );
     }
 }
